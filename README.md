@@ -29,11 +29,19 @@ We recommend this way to install the plugin into your project.
 1. Clone this project into your repository
 2. Run at the root of your project:  
 ```
+<<<<<<< HEAD
     cordova plugin add /path/to/your/cloned/plugin/AndroidInAppBilling/v3
 ```  
 or  
 ```
     phonegap local plugin add /path/to/your/cloned/plugin/AndroidInAppBilling/v3
+=======
+    cordova plugin add /path/to/your/cloned/plugin/AndroidInAppBilling --variable BILLING_KEY="MIIBIjANBgk...AQAB"
+```  
+or  
+```
+    phonegap local plugin add /path/to/your/cloned/plugin/AndroidInAppBilling --variable BILLING_KEY="MIIBIjANBgk...AQAB"
+>>>>>>> poiuytrez/master
 ```
 
 ### Manually
@@ -81,6 +89,7 @@ It contains:
 * Enter the app description, logo, etc. then click on save
 * Add in-app purchases items from the Developer Console (activate them but do not publish the app)
 * Click on Services and APIs to get your public license key
+<<<<<<< HEAD
 * Create `res/values/billing_key.xml`, and add your public key as follows:
 
 ```
@@ -88,6 +97,14 @@ It contains:
 <resources>
     <string name="billing_key">MIIBIjANBgk...AQAB</string>
 </resources>
+=======
+* For PhoneGap build, configure the plugin with a parameter in your `config.xml` file
+
+```xml
+<gap:plugin name="com.smartmobilesoftware.inappbilling">
+    <param name="BILLING_KEY" value="MIIBIjANBgk...AQAB" />
+</gap:plugin>
+>>>>>>> poiuytrez/master
 ```
 
 * Wait 6-8 hours
@@ -146,7 +163,14 @@ parameters
 "productId":"example_subscription",
 "purchaseTime":1397590291362,
 "purchaseState":0,
+<<<<<<< HEAD
 "purchaseToken":"ndglbpnjmbfccnaocnppjjfa.AO-J1Ozv857LtAk32HbtVNaK5BVnDm9sMyHFJkl-R_hJ7dCSVTazsnPGgnwNOajDm-Q3DvKEXLRWQXvucyW2rrEvAGr3wiG3KnMayn5yprqYCkMNhFl4KgZWt-4-b4Gr29_Lq8kcfKCkI57t5rUmFzTdj5fAdvX5KQ"}
+=======
+"purchaseToken":"ndglbpnjmbfccnaocnppjjfa.AO-J1Ozv857LtAk32HbtVNaK5BVnDm9sMyHFJkl-R_hJ7dCSVTazsnPGgnwNOajDm-Q3DvKEXLRWQXvucyW2rrEvAGr3wiG3KnMayn5yprqYCkMNhFl4KgZWt-4-b4Gr29_Lq8kcfKCkI57t5rUmFzTdj5fAdvX5KQ",
+"receipt": "{...}",
+"signature": "qs54SGHgjGSJHSKJHIU"}  
+**The receipt and signature are available in the object for server side validation.**
+>>>>>>> poiuytrez/master
 
 * error : The error callback.
 * productId : The in app billing product id (example "example_subscription")
